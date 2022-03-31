@@ -14,7 +14,7 @@ Simple overlay for twitch chat
 
 ## Author
 **MetaneRuS**
-- [Profile](https://github.com/MetaneRuS "MetaneRuS")
-- [Website](https://metanerus-github-io.vercel.app/ "Portfolio")
+- [Profile](https://github.com/xMetaneRx "xMetaneRx")
+- [Website](https://xmetanerx-github-io.vercel.app/ "Portfolio")
 
 Give a ⭐️ if you like this project!
