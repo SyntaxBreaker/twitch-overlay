@@ -13,7 +13,7 @@ Simple overlay for twitch chat
 - [*] emotes support
 
 ## Author
-**MetaneRuS**
+**xMetaneRx**
 - [Profile](https://github.com/xMetaneRx "xMetaneRx")
 - [Website](https://xmetanerx-github-io.vercel.app/ "Portfolio")
 
