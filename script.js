@@ -23,22 +23,25 @@ client.on('message', (channel, tags, message, self) => {
     const userInfo = document.createElement('span');
     const newMessage = document.createElement('span');
 
-    messageContainer.className += ' message my-1 block flex';
-    userInfo.className += ' text-gray-800 mr-1 max-h-6 max-w-4';
+    messageContainer.classList.add('message', 'my-2', 'block', 'flex-col', 'p-5', 'bg-gray-100', 'w-auto', 'rounded-md');
+    userInfo.classList.add('text-gray-800', 'mr-1', 'max-h-6', 'max-w-4');
 
     if(tags['mod'] === true) {
         userInfo.textContent = `/sys/${tags['display-name']}$`;
-        userInfo.className += ' bg-red-200';
+        userInfo.classList.add('text-red-500');
+    } else if(tags['vip'] === true) {
+        userInfo.textContent = `/etc/${tags['display-name']}$`;
+        userInfo.classList.add('text-pink-500');
     } else if(tags['subscriber'] === true) {
         userInfo.textContent = `/opt/${tags['display-name']}$`;
-        userInfo.className += ' bg-green-200';
+        userInfo.classList.add('text-green-500');
     } else {
         userInfo.textContent = `/usr/${tags['display-name']}$`;
-        userInfo.className += ' bg-gray-200';
+        userInfo.classList.add('text-stone-500');
     }
 
     newMessage.innerHTML = messageWithEmoticons;
-    newMessage.className += ' text-indigo-800 flex gap-1 flex-wrap';
+    newMessage.classList.add('text-indigo-800', 'flex', 'gap-1', 'flex-wrap', 'mt-2');
 
     messageContainer.appendChild(userInfo);
     messageContainer.appendChild(newMessage);
@@ -46,5 +49,6 @@ client.on('message', (channel, tags, message, self) => {
 
     const messages = document.querySelectorAll('.message');
     const lastMessage = messages[messages.length - 1];
-    lastMessage.scrollIntoView();
+
+    lastMessage.scrollIntoView(true);
 })
