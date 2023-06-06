@@ -15,6 +15,6 @@ Simple overlay for twitch chat
 ## Author
 **xMetaneRx**
 - [Profile](https://github.com/xMetaneRx "xMetaneRx")
-- [Website](https://xmetanerx-github-io.vercel.app/ "Portfolio")
+- [Website](https://xmetanerx.netlify.app "Portfolio")
 
 Give a ⭐️ if you like this project!
