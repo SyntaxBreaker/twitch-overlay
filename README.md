@@ -1,12 +1,12 @@
 # Twitch Chat
 
 ## Description
-Simple overlay for twitch chat
+Simple overlay for Twitch chat
 
 ## Built with
-* html
+* HTML
 * tailwindcss
-* javascript
+* Javascript
 * tmi.js
 
 ## Future Updates
@@ -14,7 +14,7 @@ Simple overlay for twitch chat
 
 ## Author
 **xMetaneRx**
-- [Profile](https://github.com/xMetaneRx "xMetaneRx")
-- [Website](https://xmetanerx.netlify.app "Portfolio")
+- [Profile](https://github.com/SyntaxBreaker "SyntaxBreaker")
+- [Website](https://SyntaxBreaker.netlify.app "Portfolio")
 
 Give a ⭐️ if you like this project!
