@@ -13,7 +13,7 @@ Simple overlay for Twitch chat
 - [*] emotes support
 
 ## Author
-**xMetaneRx**
+**SyntaxBreaker**
 - [Profile](https://github.com/SyntaxBreaker "SyntaxBreaker")
 - [Website](https://SyntaxBreaker.netlify.app "Portfolio")
 
