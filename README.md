@@ -1,4 +1,4 @@
-# Twitch Chat
+# Twitch Overlay
 
 ## Description
 Simple overlay for Twitch chat
