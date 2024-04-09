@@ -1,7 +1,5 @@
 # Twitch Overlay
-
-## Description
-Simple overlay for Twitch chat
+An intuitive solution to seamlessly integrate Twitch chat into your streaming experience.
 
 ## Built with
 * HTML
