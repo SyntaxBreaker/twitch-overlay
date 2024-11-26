@@ -1,10 +1,12 @@
+const container = document.querySelector("#chat-container");
+
 const client = new tmi.Client({
   channels: [""],
 });
 
 client.connect();
 
-client.on("message", (channel, tags, message, self) => {
+function addEmoticonsToMessage(message, tags) {
   let messageWithEmoticons = message;
   const emotes = tags["emotes"];
   if (emotes) {
@@ -23,10 +25,39 @@ client.on("message", (channel, tags, message, self) => {
     }
   }
 
-  const container = document.querySelector("#chat-container");
+  return messageWithEmoticons;
+}
+
+function getRank(tags) {
+  if (tags["mod"]) {
+    return { text: `/sys/${tags["display-name"]}$`, class: "text-red-500" };
+  }
+  if (tags["vip"]) {
+    return { text: `/etc/${tags["display-name"]}$`, class: "text-pink-500" };
+  }
+  if (tags["subscriber"]) {
+    return {
+      text: `/opt/${tags["display-name"]}$`,
+      class: "text-green-500",
+    };
+  }
+
+  return {
+    text: `/usr/${tags["display-name"]}$`,
+    class: "text-stone-500",
+  };
+}
+
+client.on("message", (channel, tags, message, self) => {
+  const messageWithEmoticons = addEmoticonsToMessage(message, tags);
+
   const messageContainer = document.createElement("div");
   const userInfo = document.createElement("span");
   const newMessage = document.createElement("span");
+
+  const rank = getRank(tags);
+  userInfo.textContent = rank.text;
+  userInfo.classList.add(rank.class);
 
   messageContainer.classList.add(
     "message",
@@ -38,23 +69,10 @@ client.on("message", (channel, tags, message, self) => {
     "w-auto",
     "rounded-md"
   );
+
   userInfo.classList.add("text-gray-800", "mr-1", "max-h-6", "max-w-4");
 
-  if (tags["mod"] === true) {
-    userInfo.textContent = `/sys/${tags["display-name"]}$`;
-    userInfo.classList.add("text-red-500");
-  } else if (tags["vip"] === true) {
-    userInfo.textContent = `/etc/${tags["display-name"]}$`;
-    userInfo.classList.add("text-pink-500");
-  } else if (tags["subscriber"] === true) {
-    userInfo.textContent = `/opt/${tags["display-name"]}$`;
-    userInfo.classList.add("text-green-500");
-  } else {
-    userInfo.textContent = `/usr/${tags["display-name"]}$`;
-    userInfo.classList.add("text-stone-500");
-  }
-
-  newMessage.innerHTML = messageWithEmoticons;
+  newMessage.textContent = messageWithEmoticons;
   newMessage.classList.add(
     "text-indigo-800",
     "flex",
@@ -67,8 +85,5 @@ client.on("message", (channel, tags, message, self) => {
   messageContainer.appendChild(newMessage);
   container.appendChild(messageContainer);
 
-  const messages = document.querySelectorAll(".message");
-  const lastMessage = messages[messages.length - 1];
-
-  lastMessage.scrollIntoView(true);
+  messageContainer.scrollIntoView(true);
 });
