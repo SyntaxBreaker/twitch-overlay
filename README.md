@@ -9,9 +9,9 @@ An intuitive solution to seamlessly integrate Twitch chat into your streaming ex
 - JavaScript
 - Tmi.js
 
-## Future Updates
+## Features
 
-- [*] emotes support
+- Support for Twitch emoticons
 
 ## Author
 
