@@ -71,7 +71,7 @@ client.on("message", (channel, tags, message, self) => {
 
   userInfo.classList.add("text-gray-800", "mr-1", "max-h-6", "max-w-4");
 
-  newMessage.textContent = messageWithEmoticons;
+  newMessage.innerHTML = messageWithEmoticons;
   newMessage.classList.add(
     "text-indigo-800",
     "flex",
