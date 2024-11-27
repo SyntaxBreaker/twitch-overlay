@@ -64,9 +64,8 @@ client.on("message", (channel, tags, message, self) => {
     "my-2",
     "block",
     "flex-col",
-    "p-5",
+    "p-4",
     "bg-gray-100",
-    "w-auto",
     "rounded-md"
   );
 
