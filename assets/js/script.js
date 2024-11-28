@@ -3,8 +3,16 @@ const container = document.querySelector("#chat-container");
 const client = new tmi.Client({
   channels: [""],
 });
-
 client.connect();
+
+let isUserAtBottom = true;
+
+function checkUserScroll() {
+  const scrollPosition = container.scrollTop + container.clientHeight;
+  const scrollHeight = container.scrollHeight;
+  const scrollThreshold = 88;
+  isUserAtBottom = scrollPosition >= scrollHeight - scrollThreshold;
+}
 
 function addEmoticonsToMessage(message, tags) {
   let messageWithEmoticons = message;
@@ -84,5 +92,9 @@ client.on("message", (channel, tags, message, self) => {
   messageContainer.appendChild(newMessage);
   container.appendChild(messageContainer);
 
-  messageContainer.scrollIntoView(true);
+  if (isUserAtBottom) {
+    messageContainer.scrollIntoView(true);
+  }
 });
+
+container.addEventListener("scroll", checkUserScroll);
