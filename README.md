@@ -14,10 +14,6 @@ An intuitive solution to seamlessly integrate Twitch chat into your streaming ex
 - Support for Twitch emoticons
 
 ## Author
-
-**SyntaxBreaker**
-
-- [Github](https://github.com/SyntaxBreaker "SyntaxBreaker")
-- [Website](https://SyntaxBreaker.netlify.app "Portfolio")
+- **[SyntaxBreaker]**: [[GitHub](https://www.github.com/SyntaxBreaker)] [[Website](https://syntaxbreaker.netlify.app)]
 
 Give a ⭐️ if you like this project!
